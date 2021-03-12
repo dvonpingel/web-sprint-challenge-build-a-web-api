@@ -49,6 +49,7 @@ function validateProject(req, res, next) {
 
 async function validateAction(req, res, next) {
   const project = await Projects.get(req.body.project_id);
+
   if (!project) {
     res.status(400).json({
       message: "project with that ID doesn't exist",
