@@ -20,6 +20,7 @@ async function validateProjectId(req, res, next) {
 async function validateActionId(req, res, next) {
   try {
     const action = await Actions.get(req.params.id);
+
     if (!action) {
       res.status(404).json({
         message: "Action not found.",
